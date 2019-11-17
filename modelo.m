@@ -3,11 +3,12 @@ model = input("Modelo N° => ");
 %Esta medio cochino pero no me juzgues Rolando lol
 
 %Coeficientes de la funcion objetivo segun el modelo elegido
+
 switch (model)
   case 1
     c = [70 0.35 57.3 48.9 33.15];
   case 2
-    c = [70 0.35 -22.7 -11.1 -21.85];
+    c = [70 0.35 -22.7 -26.1 -6.85];
   case 3
     c = [70 0.35 2.3 8.9 3.15];
   case 4
@@ -54,13 +55,12 @@ printf(" Z = %.3f \n V = %i \n G = %i \n S = %i \n M = %i \n T = %i \n",zmx+6600
 printf("Adicionales:\n");
 printf("Acres ocupados: %.3f \n", 2*x(1) + x(3) + x(4) + x(5)); 
 printf("Acres sin uso: %.3f \n", 640 - 2*x(1) - x(3) - x(4) - x(5) ); 
-printf("Acres de maíz dedicados a las vacas: %.3f \n", 2*x(1));
 printf("Valor de los animales a final de año: %.3f\n", 0.9*(35000 + 1500 *(x(1)-30)) + 0.75*(5000 + 3*(x(2)-2000)) );
 printf("Inversion en compra de vacas: %.3f\n", 1500 *(x(1) - 30) );
 printf("Inversion en compra de gallinas: %.3f \n", 3 *(x(2) - 2000) );
 printf("Dinero restante de inversion inicial: %.3f \n", 20000 - 1500 *(x(1) - 30)  -3 *(x(2) - 2000));
-printf("Horas hombre consumidas (primavera e invierno): %.3f \n", 4000- x(3) - 0.9*x(4) - 0.6*x(5) - 60*x(1) - 0.3 * x(2));
-printf("Horas hombre consumidas (verano y otoño): %.3f \n", 4500 - 1.4 * x(3) - 1.2*x(4) - 0.7*x(5) - 60*x(1) - 0.3 * x(2));
+printf("Horas hombre consumidas (primavera e invierno): %.3f \n", x(3) + 0.9*x(4) + 0.6*x(5) + 60*x(1) + 0.3 * x(2));
+printf("Horas hombre consumidas (verano y otoño): %.3f \n", 1.4 * x(3) + 1.2*x(4) + 0.7*x(5) + 60*x(1) + 0.3 * x(2));
 printf("Ingreso por trabajo en granja vecina (primavera e invierno): %.3f \n", 5* (4000- x(3) - 0.9*x(4) - 0.6*x(5) - 60*x(1) - 0.3 * x(2))  );
 printf("Ingreso por trabajo en granja vecina (verano y otoño): %.3f \n", 5.5* (4500 - 1.4 * x(3) - 1.2*x(4) - 0.7*x(5) - 60*x(1) - 0.3 * x(2)) );
 
@@ -82,5 +82,7 @@ switch (model)
   case 7
     printf("%.3f \n", 34*x(3) + 27.5* x(4) + 20.75 * x(5));
 endswitch
+
+
 
 
