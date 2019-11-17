@@ -1,4 +1,4 @@
-model = input("Modelo N° => ")
+model = input("Modelo N° => ");
 
 %Esta medio cochino pero no me juzgues Rolando lol
 
