@@ -1,7 +1,5 @@
 model = input("Modelo N° => ");
 
-%Esta medio cochino pero no me juzgues Rolando lol
-
 %Coeficientes de la funcion objetivo segun el modelo elegido
 
 switch (model)
